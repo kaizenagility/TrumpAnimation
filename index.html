@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+    margin: 1px;
+}
+h1 {
+    font-size: 75px;
+    text-align: center;
+    margin: 20px;
+    color: red;
+}
+#container {
+  width: auto;
+  height: 800px;
+  position: relative;
+  background: white;
+  display: flex;
+}
+#beaver {
+  position: absolute;
+  transform:rotateY(-180deg);
+  z-index: 5;
+  margin-left: 2200px;
+  display: block;
+}
+#trump {
+  position: absolute;
+  z-index: 99;
+}
+#america {
+    position: relative;
+    margin: 0px;
+    float: left;
+}
+#canada {
+    position: relative;
+    margin: 0px;
+    float: right;
+}
+#button {
+    background-color: red;
+    color: white;
+    font-size: 35px;
+    height: 120px;
+    width: 250px;
+    margin: 10px;
+    margin-top: 100px;
+    margin-left: 100px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+#button:hover {
+    background-color: lightblue;
+    color: black;
+}
+#daca {
+    align: center;
+    position: absolute;
+    margin-top: -250px;
+    display: none;
+    z-index: 9999;
+}
+    
+</style>
+
+<body>
+<h1> Make America Great Again </h1>
+<div id ="container">
+
+    <div id = "america">
+        <img src="images/America.png" height="900px">
+    </div>
+
+    <div id = "canada">
+        <img src="images/Canada.png" height="600px">
+    </div>
+    
+    <div id ="beaver">
+        <img src="images/angry_beaver.gif" height="450px">
+    </div>
+    
+    <div id = "trump">
+        <img src="images/trump1.png" height="500px">
+    </div>
+    
+    <div id = "daca">
+        <img src="images/supportDACA.jpg" height="1550px">
+    </div>
+    
+    <audio id="audio" src="audio/getout.mp3"></audio>
+    
+</div>
+    
+<button onclick="beaver(); audio.play();" id="button">   You're Fired!   </button> 
+
+<script>
+    
+function play() {
+    var audio = document.getELementById("audio/getout.mp3");
+    audio.play();
+}
+    
+function beaver() {
+    var elem = document.getElementById("beaver"); 
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 1600) {
+            clearInterval(id);
+            document.getElementById("beaver").style.display = "none";
+            trump();
+        } else {
+            pos++; 
+            elem.style.right = pos + 'px'; 
+        }
+    }
+}
+    
+function trump() {
+    var elem = document.getElementById("trump"); 
+    var pos = 0;
+    var id = setInterval(frame, 3);
+    function frame() {
+        if (pos == 850) {
+            clearInterval(id);
+            daca();
+        } else {
+            pos++; 
+            elem.style.left = pos + 'px'; 
+            elem.style.bottom = pos + 'px'; 
+        }
+    }
+}
+    
+function daca(){
+    document.getElementById("daca").style.display = "block";
+   document.getElementById("canada").style.display= "none";
+}
+    
+</script>
+</body>
+</html>
