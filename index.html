@@ -2,17 +2,17 @@
 <html>
 <style>
 * {
-    margin: 1px;
+    margin: 0px;
 }
 h1 {
-    font-size: 75px;
+    font-size: 55px;
     text-align: center;
-    margin: 20px;
+    margin-bottom: 20px;
     color: red;
 }
 #container {
-  width: auto;
-  height: 800px;
+  width: 1000;
+  height: 500;
   position: relative;
   background: white;
   display: flex;
@@ -21,7 +21,7 @@ h1 {
   position: absolute;
   transform:rotateY(-180deg);
   z-index: 5;
-  margin-left: 2200px;
+  margin-left: 1500px;
   display: block;
 }
 #trump {
@@ -42,13 +42,13 @@ h1 {
     background-color: red;
     color: white;
     font-size: 35px;
-    height: 120px;
-    width: 250px;
+    height: 100px;
+    width: 200px;
     margin: 10px;
-    margin-top: 100px;
     margin-left: 100px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px 5px gray;
+    z-index: 999;
 }
 #button:hover {
     background-color: lightblue;
@@ -57,7 +57,7 @@ h1 {
 #daca {
     align: center;
     position: absolute;
-    margin-top: -250px;
+    margin-top: 0px;
     display: none;
     z-index: 9999;
 }
@@ -69,23 +69,23 @@ h1 {
 <div id ="container">
 
     <div id = "america">
-        <img src="images/America.png" height="900px">
+        <img src="images/America.png" height="600px">
     </div>
 
     <div id = "canada">
-        <img src="images/Canada.png" height="600px">
+        <img src="images/Canada.png" height="400px">
     </div>
     
     <div id ="beaver">
-        <img src="images/angry_beaver.gif" height="450px">
+        <img src="images/angry_beaver.gif" height="250px">
     </div>
     
     <div id = "trump">
-        <img src="images/trump1.png" height="500px">
+        <img src="images/trump1.png" height="300px">
     </div>
     
     <div id = "daca">
-        <img src="images/supportDACA.jpg" height="1550px">
+        <img src="images/supportDACA.jpg" height="1000px">
     </div>
     
     <audio id="audio" src="audio/getout.mp3"></audio>
@@ -106,7 +106,7 @@ function beaver() {
     var pos = 0;
     var id = setInterval(frame, 5);
     function frame() {
-        if (pos == 1600) {
+        if (pos == 1500) {
             clearInterval(id);
             document.getElementById("beaver").style.display = "none";
             trump();
